@@ -210,3 +210,42 @@ h1 {
   text-align: center;
 }
 /* End skills section */
+
+/* Portfolio section */
+
+.portfolio__buttons-block {
+  text-align: center;
+}
+
+.buttons-item {
+  width: 220px;
+  padding: 8px 79px;
+  border: 2px solid #bdae82;
+  box-sizing: border-box;
+  background: #000;
+  color: #bdae82;
+  font-family: 'Inter' sans-serif;
+  font-weight: 400;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.buttons-item:last-child {
+  background: #bdae82;
+  color: #000;
+}
+
+.portfolio__pictures {
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.pictures-item {
+  display: block;
+  margin-bottom: 25px;
+}
+
+/* Portfolio section */
