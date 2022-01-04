@@ -1,0 +1,75 @@
+/* Remove margin, padding and border */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* Smooth scroll */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Main container */
+body {
+  background: #000;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+
+.header__container {
+  background: url('./assets/img/header-bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center 0;
+  display: flex;
+  align-items: center;
+}
+
+.header__logo {
+  padding: 25px 20px;
+}
+
+.header__navigation {
+  margin-left: auto;
+}
+
+.menu__list {
+  display: flex;
+}
+
+.menu__list-item {
+  margin-right: 30px;
+}
+
+.menu__link {
+  text-decoration: none;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.language-item {
+  margin-left: 9px;
+  font-weight: 700;
+}
+
+.language-item__en {
+  font-weight: 700;
+  color: #bdae82;
+}
+
+/* end header block */
