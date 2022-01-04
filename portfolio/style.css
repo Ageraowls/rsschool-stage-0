@@ -32,12 +32,13 @@ ul {
 
 /* Header */
 
-.header__container {
+.header-container {
   background: url('./assets/img/header-bg.jpg');
   background-repeat: no-repeat;
   background-position: center 0;
   display: flex;
   align-items: center;
+  padding-right: 20px;
 }
 
 .header__logo {
@@ -73,3 +74,41 @@ ul {
 }
 
 /* end header block */
+
+/* hero section */
+.hero-container {
+  background-image: url('./assets/img/header-bg.jpg');
+  background-position: center -94px;
+  background-repeat: no-repeat;
+  padding-left: 80px;
+  position: relative;
+}
+
+h1 {
+  font-family: 'Merriweather', serif;
+  font-size: 60px;
+  line-height: 120px;
+}
+
+.hero__text {
+  padding-top: 160px;
+  height: 330px;
+  padding-bottom: 330px;
+  padding-right: 880px;
+  line-height: 40px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.button-hero {
+  background: #bdae82;
+  width: 220px;
+  padding: 8px 72px;
+  border-radius: 0px;
+  margin-top: 25px;
+  line-height: 40px;
+  color: #000000;
+  cursor: pointer;
+  font-family: inherit;
+}
+/* end hero section */
