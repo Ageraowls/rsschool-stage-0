@@ -13,6 +13,7 @@ html {
 
 /* Main container */
 body {
+  box-sizing: border-box;
   background: #000;
   color: #fff;
   font-family: 'Inter', sans-serif;
@@ -88,10 +89,12 @@ h1 {
   font-family: 'Merriweather', serif;
   font-size: 60px;
   line-height: 120px;
+  font-weight: bold;
+  color: #ffffff;
 }
 
 .hero__text {
-  padding-top: 160px;
+  padding-top: 155px;
   height: 330px;
   padding-bottom: 330px;
   padding-right: 880px;
@@ -100,16 +103,22 @@ h1 {
   font-weight: 400;
 }
 
+.hero__text-item {
+  margin-top: 10px;
+}
+
 .button-hero {
   background: #bdae82;
   width: 220px;
-  padding: 8px 72px;
+  font-size: 20px;
+  padding: 8px 70px 8px 72px;
   border-radius: 0px;
   margin-top: 25px;
   line-height: 40px;
   color: #000000;
   cursor: pointer;
   font-family: inherit;
+  text-align: center;
 }
 /* end hero section */
 
@@ -124,7 +133,7 @@ h1 {
 
 .section-title {
   font-family: 'Merriweather', serif;
-  margin-top: 100px;
+  margin-top: 99px;
   margin-bottom: 60px;
   font-size: 40px;
   font-weight: 700;
@@ -159,7 +168,7 @@ h1 {
 /* Skills section */
 .skills-items {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 .skill-item {
@@ -182,7 +191,7 @@ h1 {
 
 .skill-item:nth-child(3) {
   background-image: url('./assets/svg/image.svg');
-  background-size: 62px 50px;
+  background-size: 65px 53px;
   background-repeat: no-repeat;
   background-position: center top;
 }
@@ -198,13 +207,13 @@ h1 {
   font-size: 20px;
   padding-top: 100px;
   text-align: center;
-  font-weight: 700;
+  font-weight: bold;
   line-height: 40px;
 }
 
 .skill-text {
   font-size: 18px;
-  margin-top: 20px;
+  margin-top: 22px;
   font-weight: normal;
   line-height: 36px;
   text-align: center;
@@ -217,8 +226,9 @@ h1 {
   text-align: center;
 }
 
-.buttons-item {
+.button-item {
   width: 220px;
+  font-size: 20px;
   padding: 8px 79px;
   border: 2px solid #bdae82;
   box-sizing: border-box;
@@ -231,7 +241,7 @@ h1 {
   cursor: pointer;
 }
 
-.buttons-item:last-child {
+.button-item:last-child {
   background: #bdae82;
   color: #000;
 }
@@ -248,4 +258,32 @@ h1 {
   margin-bottom: 25px;
 }
 
-/* Portfolio section */
+/* end portfolio section */
+
+/* Video section */
+
+.video-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position: ;
+}
+
+.video-player {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-player__button {
+  position: absolute;
+  background-color: transparent; /* transparent background for the button*/
+  cursor: pointer;
+}
+
+/* end video section */
+
+/* Price section */
+
+/* End price section */
