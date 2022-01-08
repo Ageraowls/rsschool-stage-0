@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" href="assets/img/icon.ico">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon.ico">
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet"
 		href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Merriweather:wght@700&display=swap">
@@ -28,7 +28,7 @@
 				</nav>
 				<div class="header__language-switcher">
 					<span class="language-item__en">en</span><span class="language-item">/</span><span
-						class="language-item">ru</span>
+						class="language-item ru">ru</span>
 				</div>
 			</div>
 		</div>
@@ -74,10 +74,10 @@
 					<h2 class="section-title">Portfolio</h2>
 				</div>
 				<div class="portfolio__buttons-block">
-					<button class="button-item">Winter</button>
-					<button class="button-item">Spring</button>
-					<button class="button-item">Summer</button>
-					<button class="button-item">Autumn</button>
+					<button class="button-item button">Winter</button>
+					<button class="button-item button">Spring</button>
+					<button class="button-item button">Summer</button>
+					<button class="button-item button button__gold">Autumn</button>
 				</div>
 				<div class="portfolio__pictures">
 					<img class="pictures-item" src="assets/img/portfolio-img.jpg" alt="young kiss">
@@ -94,7 +94,7 @@
 				</div>
 				<div class="video-player">
 					<img src="assets/img/video-player.jpg" alt="video-player" class="video-img">
-					<button class="video-player__button"><img src="assets/img/playunvisited.png" alt=""></button>
+					<button class="video-player__button"><img src="assets/svg/playunvisited.svg" alt="video-button"></button>
 				</div>
 			</section>
 			<section class="section price">
@@ -110,7 +110,7 @@
 						<span class="card__info">12 photos in retouch</span>
 						<span class="card__info">Readiness 2-3 weeks</span>
 						<span class="card__info">Make up, visage</span>
-						<button class="card__order-button">Order shooting</button>
+						<button class="card__order-button button">Order shooting</button>
 					</div>
 					<div class="card-item">
 						<h3 class="card__title">Premium</h3>
@@ -120,7 +120,7 @@
 						<span class="card__info">20 photos in retouch</span>
 						<span class="card__info">Readiness 1-2 weeks</span>
 						<span class="card__info">Make up, visage</span>
-						<button class="card__order-button">Order shooting</button>
+						<button class="card__order-button button">Order shooting</button>
 					</div>
 					<div class="card-item">
 						<h3 class="card__title">Gold</h3>
@@ -130,7 +130,7 @@
 						<span class="card__info">50 photos in retouch</span>
 						<span class="card__info">Readiness 1 week</span>
 						<span class="card__info">Make up, visage, hairstyle</span>
-						<button class="card__order-button">Order shooting</button>
+						<button class="card__order-button button">Order shooting</button>
 					</div>
 				</div>
 			</section>
@@ -139,21 +139,39 @@
 					<div class="contacts__items">
 						<h2 class="contacts__title">Contact me</h2>
 						<form action="#" class="contacts__form">
-							<label for="#"><input type="email" class="contact__form_data" placeholder="E-mail"></label>
-							<label for="#"><input type="tel" class="contact__form_data" placeholder="Phone"></label>
-							<label for="#"><textarea name="message" class="contact__form_message"
+							<label for="mail"><input type="email" class="contact__form_data" id="mail" placeholder="E-mail"></label>
+							<label for="phone"><input type="tel" class="contact__form_data" id="phone" placeholder="Phone"></label>
+							<label for="message"><textarea name="message" id="message" class="contact__form_message"
 									placeholder="Message"></textarea></label>
-							<button type="submit" class="contact__form_button">Send message</button>
+							<button type="submit" class="contact__form_button button">Send message</button>
 						</form>
 					</div>
 				</div>
 			</section>
 		</div>
-		</div>
 	</main>
 	<footer class="footer" id="footer">
 		<div class="container">
-
+			<div class="footer-container">
+				<div class="footer__data">
+					<span>©</span>
+					<span>2022</span>
+					<a class="data__author-link" href="https://github.com/ageraowls" target="_blank">github</a>
+				</div>
+				<div class="footer__school">
+					<a href="https://rs.school/js-stage0/" class="footer__school-link" target="_blank">Rolling Scopes School</a>
+				</div>
+				<ul class="footer__socials">
+					<li class="footer__socials-item"><a class="socials-item__link" href="#"><img src="assets/svg/inst.svg"
+								alt="instagram-link"></a></li>
+					<li class="footer__socials-item"><a class="socials-item__link" href="#"><img src="assets/svg/fb.svg"
+								alt="fb-link"></a></li>
+					<li class="footer__socials-item"><a class="socials-item__link" href="#"><img src="assets/svg/tw.svg"
+								alt="tw-link"></a></li>
+					<li class="footer__socials-item"><a class="socials-item__link" href="#"><img src="assets/svg/pinterest.svg"
+								alt="printerest-link"></a></li>
+				</ul>
+			</div>
 		</div>
 	</footer>
 

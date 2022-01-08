@@ -10,10 +10,11 @@
 html {
   scroll-behavior: smooth;
 }
-
+* {
+  box-sizing: border-box;
+}
 /* Main container */
 body {
-  box-sizing: border-box;
   background: #000;
   color: #fff;
   font-family: 'Inter', sans-serif;
@@ -29,10 +30,21 @@ a {
   text-decoration: none;
 }
 
+.button {
+  transition: color 0.3s;
+}
+
+.button:hover {
+  color: #fff;
+}
+
+.button__gold:hover {
+  color: #fff;
+}
+
 .container {
   width: 1440px;
   margin: 0 auto;
-  padding: 0 20px;
 }
 
 /* Header */
@@ -43,11 +55,18 @@ a {
   background-position: center 0;
   display: flex;
   align-items: center;
-  padding-right: 20px;
+  padding: 0px 20px;
+  height: 90px;
 }
 
 .header__logo {
-  padding: 25px 20px;
+  vertical-align: middle;
+  transition: 0.3s;
+}
+
+.header__logo:hover {
+  filter: invert(21%) sepia(10%) saturate(1031%) hue-rotate(7deg)
+    brightness(89%) contrast(85%);
 }
 
 .header__navigation {
@@ -65,6 +84,15 @@ a {
 .menu__link {
   font-size: 20px;
   color: #ffffff;
+  transition: color 0.3s;
+}
+
+.menu__link:hover {
+  color: #bdae82;
+}
+
+.header__language-switcher {
+  padding-bottom: 3px;
 }
 
 .language-item {
@@ -75,6 +103,11 @@ a {
 .language-item__en {
   font-weight: 700;
   color: #bdae82;
+  cursor: pointer;
+}
+
+.language-item.ru {
+  cursor: pointer;
 }
 
 /* end header block */
@@ -82,9 +115,10 @@ a {
 /* hero section */
 .hero-container {
   background-image: url('./assets/img/header-bg.jpg');
-  background-position: center -94px;
+  background-position: center -90px;
   background-repeat: no-repeat;
   padding-left: 80px;
+  height: 820px;
   position: relative;
 }
 
@@ -97,10 +131,9 @@ h1 {
 }
 
 .hero__text {
-  padding-top: 155px;
+  padding-top: 158px;
   height: 330px;
-  padding-bottom: 330px;
-  padding-right: 880px;
+  width: 470px;
   line-height: 40px;
   font-style: normal;
   font-weight: 400;
@@ -113,6 +146,7 @@ h1 {
 .button-hero {
   background: #bdae82;
   width: 220px;
+  height: 55px;
   font-size: 20px;
   padding: 8px 70px 8px 72px;
   border-radius: 0px;
@@ -136,7 +170,7 @@ h1 {
 
 .section-title {
   font-family: 'Merriweather', serif;
-  padding-top: 100px;
+  padding-top: 98px;
   margin-bottom: 60px;
   font-size: 40px;
   font-weight: 700;
@@ -163,7 +197,7 @@ h1 {
 
 .section-title::after {
   margin-right: -100%;
-  right: -21px;
+  right: -20px;
 }
 
 /* end setting title */
@@ -235,6 +269,7 @@ h1 {
   display: flex;
   gap: 5px;
   justify-content: center;
+  margin-top: 2px;
 }
 
 .button-item {
@@ -276,8 +311,8 @@ h1 {
 /* Video section */
 
 .video-title {
-  margin-top: -22px;
-  margin-bottom: 62px;
+  margin-top: -18px;
+  margin-bottom: 60px;
 }
 
 .video-img {
@@ -297,6 +332,12 @@ h1 {
   position: absolute;
   background-color: transparent; /* transparent background for the button*/
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.video-player__button:hover {
+  filter: invert(21%) sepia(10%) saturate(1031%) hue-rotate(7deg)
+    brightness(89%) contrast(85%);
 }
 
 /* end video section */
@@ -306,12 +347,12 @@ h1 {
 .price__cards {
   display: flex;
   justify-content: center;
-  gap: 19px;
+  gap: 25px;
 }
 
 .card-item {
   text-align: center;
-  padding: 40px 115px;
+  padding: 43px 112px;
   border: 3px solid #bdae82;
   box-sizing: border-box;
 }
@@ -347,7 +388,7 @@ h1 {
   font-size: 20px;
   line-height: 40px;
   cursor: pointer;
-  margin-top: 40px;
+  margin-top: 39px;
 }
 
 /* End price section */
@@ -355,7 +396,7 @@ h1 {
 /* Contacts section */
 
 .section.contacts {
-  margin-top: 100px;
+  margin-top: 98px;
 }
 
 .contacts-container {
@@ -374,7 +415,7 @@ h1 {
   font-style: normal;
   line-height: 80px;
   color: #bdae82;
-  padding-top: 60px;
+  padding-top: 59px;
   margin-bottom: 40px;
 }
 
@@ -396,8 +437,8 @@ h1 {
 
 .contact__form_message {
   display: block;
-  width: 429px;
-  height: 92px;
+  width: 450px;
+  height: 100px;
   padding-left: 18px;
   padding-top: 3px;
   border: 2px solid #bdae82;
@@ -425,7 +466,7 @@ h1 {
   width: 220px;
   height: 55px;
   background-color: #bdae82;
-  margin-top: 31px;
+  margin-top: 30px;
   font-family: inherit;
   font-size: 20px;
   line-height: 40px;
@@ -436,5 +477,53 @@ h1 {
 /* End contacts section */
 
 /* Footer */
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 53px 20px;
+  height: 150px;
+  margin-top: 5px;
+}
+
+.footer__socials {
+  display: flex;
+  gap: 20px;
+}
+
+.socials-item__link:hover {
+  transition: 0.3s;
+  filter: invert(21%) sepia(10%) saturate(1031%) hue-rotate(7deg)
+    brightness(89%) contrast(85%);
+}
+
+.footer__school {
+  margin-top: 4px;
+}
+
+.footer__school-link {
+  padding-left: 19px;
+}
+
+.footer__school-link:hover {
+  color: #bdae82;
+}
+
+.footer__data {
+  margin-top: 4px;
+}
+.footer__data span {
+  margin-right: 15px;
+}
+
+.data__author-link:hover {
+  color: #bdae82;
+}
+
+.data__author-link,
+.footer__school-link {
+  color: #fff;
+  transition: 0.3s;
+}
 
 /* End footer */
