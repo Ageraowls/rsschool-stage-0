@@ -65,8 +65,7 @@ a {
 }
 
 .header__logo:hover {
-  filter: invert(21%) sepia(10%) saturate(1031%) hue-rotate(7deg)
-    brightness(89%) contrast(85%);
+  filter: invert(21%) sepia(10%) saturate(1031%) hue-rotate(7deg) brightness(89%) contrast(85%);
 }
 
 .header__navigation {
@@ -78,7 +77,7 @@ a {
 }
 
 .menu__list-item {
-  margin-right: 30px;
+  margin-right: 28px;
 }
 
 .menu__link {
@@ -100,7 +99,7 @@ a {
   font-weight: 700;
 }
 
-.language-item__en {
+.language-item.en {
   font-weight: 700;
   color: #bdae82;
   cursor: pointer;
@@ -336,8 +335,7 @@ h1 {
 }
 
 .video-player__button:hover {
-  filter: invert(21%) sepia(10%) saturate(1031%) hue-rotate(7deg)
-    brightness(89%) contrast(85%);
+  filter: invert(21%) sepia(10%) saturate(1031%) hue-rotate(7deg) brightness(89%) contrast(85%);
 }
 
 /* end video section */
@@ -493,8 +491,7 @@ h1 {
 
 .socials-item__link:hover {
   transition: 0.3s;
-  filter: invert(21%) sepia(10%) saturate(1031%) hue-rotate(7deg)
-    brightness(89%) contrast(85%);
+  filter: invert(21%) sepia(10%) saturate(1031%) hue-rotate(7deg) brightness(89%) contrast(85%);
 }
 
 .footer__school {
