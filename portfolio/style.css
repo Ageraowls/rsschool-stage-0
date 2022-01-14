@@ -1,0 +1,526 @@
+/* Remove margin, padding and border */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* Smooth scroll */
+
+html {
+  scroll-behavior: smooth;
+}
+* {
+  box-sizing: border-box;
+}
+/* Main container */
+body {
+  background: #000;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.button {
+  transition: color 0.3s;
+}
+
+.button:hover {
+  color: #fff;
+}
+
+.button__gold:hover {
+  color: #fff;
+}
+
+.container {
+  width: 1440px;
+  margin: 0 auto;
+}
+
+/* Header */
+
+.header-container {
+  background: url('./assets/img/header-bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center 0;
+  display: flex;
+  align-items: center;
+  padding: 0px 20px;
+  height: 90px;
+}
+
+.header__logo {
+  vertical-align: middle;
+  transition: 0.3s;
+}
+
+.header__logo:hover {
+  filter: invert(21%) sepia(10%) saturate(1031%) hue-rotate(7deg) brightness(89%) contrast(85%);
+}
+
+.header__navigation {
+  margin-left: auto;
+}
+
+.menu__list {
+  display: flex;
+}
+
+.menu__list-item {
+  margin-right: 28px;
+}
+
+.menu__link {
+  font-size: 20px;
+  color: #ffffff;
+  transition: color 0.3s;
+}
+
+.menu__link:hover {
+  color: #bdae82;
+}
+
+.header__language-switcher {
+  padding-bottom: 3px;
+}
+
+.language-item {
+  margin-left: 9px;
+  font-weight: 700;
+}
+
+.language-item.en {
+  font-weight: 700;
+  color: #bdae82;
+  cursor: pointer;
+}
+
+.language-item.ru {
+  cursor: pointer;
+}
+
+/* end header block */
+
+/* hero section */
+.hero-container {
+  background-image: url('./assets/img/header-bg.jpg');
+  background-position: center -90px;
+  background-repeat: no-repeat;
+  padding-left: 80px;
+  height: 820px;
+  position: relative;
+}
+
+h1 {
+  font-family: 'Merriweather', serif;
+  font-size: 60px;
+  line-height: 120px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.hero__text {
+  padding-top: 158px;
+  height: 330px;
+  width: 470px;
+  line-height: 40px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.hero__text-item {
+  margin-top: 10px;
+}
+
+.button-hero {
+  background: #bdae82;
+  width: 220px;
+  height: 55px;
+  font-size: 20px;
+  padding: 8px 70px 8px 72px;
+  border-radius: 0px;
+  margin-top: 25px;
+  line-height: 40px;
+  color: #000000;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: center;
+}
+/* end hero section */
+
+/* setting title */
+
+.title {
+  width: 48.5%;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-family: 'Merriweather', serif;
+  padding-top: 98px;
+  margin-bottom: 60px;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 80px;
+  text-align: center;
+  color: #bdae82;
+}
+
+.section-title::before,
+.section-title::after {
+  position: relative;
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  background: #bdae82;
+  height: 2px;
+  width: 100%;
+}
+
+.section-title::before {
+  margin-left: -100%;
+  left: -21px;
+}
+
+.section-title::after {
+  margin-right: -100%;
+  right: -20px;
+}
+
+/* end setting title */
+
+/* Skills section */
+
+.skills {
+  margin-bottom: 7px;
+}
+
+.skills-items {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.skill-item {
+  width: 280px;
+}
+
+.skill-item:nth-child(1) {
+  background-image: url('./assets/svg/camera.svg');
+  background-size: 62px 51px;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+.skill-item:nth-child(2) {
+  background-image: url('./assets/svg/video.svg');
+  background-size: 62px 50px;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+.skill-item:nth-child(3) {
+  background-image: url('./assets/svg/image.svg');
+  background-size: 65px 53px;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+.skill-item:nth-child(4) {
+  background-image: url('./assets/svg/mic.svg');
+  background-size: 62px 50px;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+.skill-title {
+  font-size: 20px;
+  padding-top: 100px;
+  text-align: center;
+  font-weight: bold;
+  line-height: 40px;
+}
+
+.skill-text {
+  font-size: 18px;
+  margin-top: 22px;
+  font-weight: normal;
+  line-height: 36px;
+  text-align: center;
+}
+/* End skills section */
+
+/* Portfolio section */
+
+.portfolio__buttons-block {
+  text-align: center;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.button-item {
+  width: 220px;
+  height: 55px;
+  font-size: 20px;
+  padding: 3px 0px 0px 0px;
+  border: 2px solid #bdae82;
+  box-sizing: border-box;
+  background: #000;
+  color: #bdae82;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.button-item:last-child {
+  background: #bdae82;
+  color: #000;
+}
+
+.portfolio__pictures {
+  margin-top: 61px;
+  display: flex;
+  gap: 5px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.pictures-item {
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* end portfolio section */
+
+/* Video section */
+
+.video-title {
+  margin-top: -18px;
+  margin-bottom: 60px;
+}
+
+.video-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.video-player {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-player__button {
+  position: absolute;
+  background-color: transparent; /* transparent background for the button*/
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.video-player__button:hover {
+  filter: invert(21%) sepia(10%) saturate(1031%) hue-rotate(7deg) brightness(89%) contrast(85%);
+}
+
+/* end video section */
+
+/* Price section */
+
+.price__cards {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.card-item {
+  text-align: center;
+  padding: 43px 112px;
+  border: 3px solid #bdae82;
+  box-sizing: border-box;
+}
+
+.card__title {
+  font-family: 'Merriweather', serif;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 56px;
+  margin-bottom: 20px;
+}
+
+.card__cost {
+  font-family: 'Merriweather', serif;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 48px;
+  color: #bdae82;
+  margin-bottom: 20px;
+}
+
+.card__info {
+  display: block;
+  font-size: 18px;
+  line-height: 36px;
+}
+
+.card__order-button {
+  width: 220px;
+  height: 55px;
+  font-family: 'Inter', sans-serif;
+  background-color: #bdae82;
+  font-size: 20px;
+  line-height: 40px;
+  cursor: pointer;
+  margin-top: 39px;
+}
+
+/* End price section */
+
+/* Contacts section */
+
+.section.contacts {
+  margin-top: 98px;
+}
+
+.contacts-container {
+  background: url('./assets/img/contacts.jpg') no-repeat;
+  height: 700px;
+  width: 100%;
+  background-position: center center;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.contacts__title {
+  font-family: 'Merriweather', serif;
+  font-size: 40px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 80px;
+  color: #bdae82;
+  padding-top: 59px;
+  margin-bottom: 40px;
+}
+
+.contact__form_data {
+  box-sizing: border-box;
+  display: block;
+  width: 450px;
+  padding-left: 18px;
+  height: 50px;
+  font-size: 20px;
+  line-height: 40px;
+  margin-right: 20px;
+  border: 2px solid #bdae82;
+  background: transparent;
+  margin-bottom: 20px;
+  color: #bdae82;
+  font-family: 'Inter';
+}
+
+.contact__form_message {
+  display: block;
+  width: 450px;
+  height: 100px;
+  padding-left: 18px;
+  padding-top: 3px;
+  border: 2px solid #bdae82;
+  background: transparent;
+  font-size: 20px;
+  color: #bdae82;
+  resize: none;
+  font-family: 'Inter';
+  line-height: 40px;
+}
+
+.contact__form_data::placeholder {
+  font-family: inherit;
+  color: #bdae82;
+  font-size: 20px;
+}
+
+.contact__form_message::placeholder {
+  font-family: 'Inter', serif;
+  color: #bdae82;
+  font-size: 20px;
+}
+
+.contact__form_button {
+  width: 220px;
+  height: 55px;
+  background-color: #bdae82;
+  margin-top: 30px;
+  font-family: inherit;
+  font-size: 20px;
+  line-height: 40px;
+  align-items: center;
+  font-weight: 400;
+  cursor: pointer;
+}
+/* End contacts section */
+
+/* Footer */
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 53px 20px;
+  height: 150px;
+  margin-top: 5px;
+}
+
+.footer__socials {
+  display: flex;
+  gap: 20px;
+}
+
+.socials-item__link:hover {
+  transition: 0.3s;
+  filter: invert(21%) sepia(10%) saturate(1031%) hue-rotate(7deg) brightness(89%) contrast(85%);
+}
+
+.footer__school {
+  margin-top: 4px;
+}
+
+.footer__school-link {
+  padding-left: 19px;
+}
+
+.footer__school-link:hover {
+  color: #bdae82;
+}
+
+.footer__data {
+  margin-top: 4px;
+}
+.footer__data span {
+  margin-right: 15px;
+}
+
+.data__author-link:hover {
+  color: #bdae82;
+}
+
+.data__author-link,
+.footer__school-link {
+  color: #fff;
+  transition: 0.3s;
+}
+
+/* End footer */
