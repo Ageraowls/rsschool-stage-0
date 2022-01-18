@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon.ico">
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="media.css">
 	<link rel="stylesheet"
 		href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Merriweather:wght@700&display=swap">
 	<title>portfolio</title>
@@ -19,16 +20,27 @@
 				<div class="header__logo"><a href="#"><img src="assets/svg/logo.svg" alt="header-logo"></a></div>
 				<nav class="header__navigation">
 					<ul class="menu__list">
-						<li class="menu__list-item"><a href="#skills" class="menu__link">Skills</a></li>
-						<li class="menu__list-item"><a href="#portfolio" class="menu__link">Portfolio</a></li>
-						<li class="menu__list-item"><a href="#video" class="menu__link">Video</a></li>
-						<li class="menu__list-item"><a href="#price" class="menu__link">Price</a></li>
-						<li class="menu__list-item"><a href="#contacts" class="menu__link">Contacts</a></li>
+						<li class="menu__list-item"><a href="#skills" class="menu__link js-scroll">Skills</a></li>
+						<li class="menu__list-item"><a href="#portfolio" class="menu__link js-scroll">Portfolio</a></li>
+						<li class="menu__list-item"><a href="#video" class="menu__link js-scroll">Video</a></li>
+						<li class="menu__list-item"><a href="#price" class="menu__link js-scroll">Price</a></li>
+						<li class="menu__list-item"><a href="#contacts" class="menu__link js-scroll">Contacts</a></li>
 					</ul>
+					<div class="header__navigation-close">
+						<span class="header__navigation-close-line"></span>
+						<span class="header__navigation-close-line"></span>
+					</div>
 				</nav>
-				<div class="header__language-switcher">
-					<span class="language-item en">en</span><span class="language-item">/</span><span
-						class="language-item ru">ru</span>
+				<div class="header__items">
+					<div class="header__language-switcher">
+						<span class="language-item en">en</span><span class="language-item slash">/</span><span
+							class="language-item ru">ru</span>
+					</div>
+					<div class="header__burger burger">
+						<span class="burger__line burger__line-first"></span>
+						<span class="burger__line burger__line-second"></span>
+						<span class="burger__line burger__line-third"></span>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -71,7 +83,7 @@
 			</section>
 			<section class="section portfolio">
 				<div class="title">
-					<h2 class="section-title" id="portfolio">Portfolio</h2>
+					<h2 class="section-title porftolio-title" id="portfolio">Portfolio</h2>
 				</div>
 				<div class="portfolio__buttons-block">
 					<button class="button-item button">Winter</button>
@@ -89,17 +101,18 @@
 				</div>
 			</section>
 			<section class="section video">
-				<div class="title">
-					<h2 class="section-title video-title" id="video">Video</h2>
+				<div class="title video-title">
+					<h2 class="section-title" id="video">Video</h2>
 				</div>
 				<div class="video-player">
 					<img src="assets/img/video-player.jpg" alt="video-player" class="video-img">
-					<button class="video-player__button"><img src="assets/svg/playunvisited.svg" alt="video-button"></button>
+					<button class="video-player__button"><img class="video-player__img" src="assets/svg/playunvisited.svg"
+							alt="video-button"></button>
 				</div>
 			</section>
 			<section class="section price">
 				<div class="title">
-					<h2 class="section-title" id="price">Price</h2>
+					<h2 class="section-title price-title" id="price">Price</h2>
 				</div>
 				<div class="price__cards">
 					<div class="card-item">
@@ -154,7 +167,7 @@
 		<div class="container">
 			<div class="footer-container">
 				<div class="footer__data">
-					<span>©</span>
+					<span class="data-icon">©</span>
 					<span>2022</span>
 					<a class="data__author-link" href="https://github.com/ageraowls" target="_blank">github</a>
 				</div>
