@@ -25,6 +25,7 @@ console.log(
 })();
 
 // Scroll to anchors
+
 (function () {
   const smoothScroll = function (targetEl, duration) {
     const headerElHeight = document.querySelector('.header').clientHeight;

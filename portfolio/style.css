@@ -537,6 +537,7 @@ h1 {
   background-color: #fff;
   position: absolute;
   left: 0;
+  transition: all 0.3s ease-in-out;
 }
 .burger__line-first {
   top: 0;
@@ -548,5 +549,4 @@ h1 {
 .burger__line-third {
   bottom: 0;
 }
-
-/* End footer */
+/* End footer */ ;
