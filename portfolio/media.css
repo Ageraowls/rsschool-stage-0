@@ -95,7 +95,7 @@
   }
   .video-title {
     padding-top: 10px;
-    margin-bottom: 4px;
+    margin-bottom: 5px;
   }
   .video-img {
     max-width: 100%;
@@ -106,8 +106,8 @@
     height: 64px;
   }
   .video {
-    margin-bottom: 13px;
-    width: 100%;
+    margin-bottom: 12px;
+    max-width: 100%;
   }
   .price-title {
     margin-bottom: 50px;
