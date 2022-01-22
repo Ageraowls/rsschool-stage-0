@@ -207,8 +207,25 @@
     transform: translateX(100%);
     transition: 0.3s all linear;
   }
+
   .active {
     transform: translateX(0);
+  }
+  body:after {
+    opacity: 0;
+    content: '';
+  }
+
+  body.active:after {
+    content: '';
+    background-color: #a9a9a9;
+    opacity: 0.3;
+    left: 250px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: fixed;
+    transition: all 0.3s 0.3s;
   }
   .overlay {
     background-color: rgba(0, 0, 0, 0.7);
