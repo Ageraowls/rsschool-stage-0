@@ -8,11 +8,13 @@ console.log(
   const humb = document.querySelector('.burger');
   const menu = document.querySelector('.header__navigation');
   const menuLinks = document.querySelectorAll('.menu__link');
+  const overlay = document.querySelector('.overlay');
   if (window.innerWidth <= 768) {
     for (let i = 0; i < menuLinks.length; i++) {
       menuLinks[i].addEventListener('click', () => {
         menu.classList.remove('active');
         humb.classList.remove('active');
+        overlay.classList.remove('active');
       });
     }
   }
@@ -20,11 +22,13 @@ console.log(
 
 let humb = document.querySelector('.burger');
 let navMenu = document.querySelector('.header__navigation');
+let overlay = document.querySelector('.overlay');
 humb.addEventListener('click', mobileMenu);
 
 function mobileMenu() {
   humb.classList.toggle('active');
   navMenu.classList.toggle('active');
+  overlay.classList.toggle('active');
 }
 
 // Scroll to anchors
