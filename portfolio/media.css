@@ -208,30 +208,19 @@
     transition: 0.3s all linear;
   }
 
-  .active {
-    transform: translateX(0);
-  }
-  body:after {
-    opacity: 0;
-    content: '';
+  .overlay.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    background: rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease-out;
   }
 
-  body.active:after {
-    content: '';
-    background-color: #a9a9a9;
-    opacity: 0.3;
-    left: 250px;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    position: fixed;
-    transition: all 0.3s 0.3s;
-  }
-  .overlay {
-    background-color: rgba(0, 0, 0, 0.7);
-    height: 100%;
-    position: absolute;
-    width: 100%;
+  .active {
+    transform: translateX(0);
   }
   .menu__list {
     flex-direction: column;
