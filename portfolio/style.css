@@ -97,7 +97,6 @@ a {
 
 .language-item.en {
   font-weight: 700;
-  color: #bdae82;
   cursor: pointer;
 }
 
@@ -283,7 +282,7 @@ h1 {
   cursor: pointer;
 }
 
-.button-item:last-child {
+.button__gold.active {
   background: #bdae82;
   color: #000;
 }
@@ -550,4 +549,13 @@ h1 {
   bottom: 0;
 }
 
-/* End footer */ ;
+/* End footer */
+.button-item.active {
+  color: #000;
+  background-color: #bdae82;
+}
+
+.en.active,
+.ru.active {
+  color: #bdae82;
+}
