@@ -1,6 +1,6 @@
-console.log(
-  '1. Вёрстка соответствует макету. Ширина экрана 768px +48\n2. Ни на одном из разрешений до 320px включительно не появляется горизонтальная полоса прокрутки +15\n3. На ширине экрана 768рх и меньше реализовано адаптивное меню +22'
-);
+// console.log(
+//   '1. Вёрстка соответствует макету. Ширина экрана 768px +48\n2. Ни на одном из разрешений до 320px включительно не появляется горизонтальная полоса прокрутки +15\n3. На ширине экрана 768рх и меньше реализовано адаптивное меню +22'
+// );
 const i18Obj = {
   en: {
     skills: 'Skills',
@@ -177,6 +177,7 @@ function mobileMenu() {
 const portfolioBtn = document.querySelector('.button-item');
 const portfolioImages = document.querySelectorAll('.pictures-item');
 const portfolioBtns = document.querySelector('.portfolio__buttons-block');
+const btns = document.querySelectorAll('.button-item');
 // portfolioImages.forEach((img, index) => (img.src = `./assets/img/winter/${index + 1}.jpg`));
 // event.dataset.forEach((season, index) => (season.src = `./assets/img/${index + 1}`));
 
@@ -185,7 +186,6 @@ portfolioBtns.addEventListener('click', (event) => {
     const season = event.target.dataset.season;
     portfolioImages.forEach((img, index) => (img.src = `./assets/img/${season}/${index + 1}.jpg`));
   }
-  const btns = document.querySelectorAll('.button-item');
   const target = event.target;
   btns.forEach((item) => {
     item.classList.remove('active');
@@ -203,14 +203,31 @@ function preloadImages(folder) {
 const seasons = ['winter', 'spring', 'summer', 'autumn'];
 seasons.forEach((i) => preloadImages(i));
 
-// function getTranslate(lang = 'ru') {
-//   const data = document.querySelectorAll('[data-i18]');
-//   data.forEach((item) => {
-//     let text = item.dataset.i18;
-//     item.textContent = i18Obj.ru[text];
-//     console.log(text);
-//   });
-// }
+let mailInput = document.getElementById('mail');
+let phoneInput = document.getElementById('phone');
+
+function getTranslateRu(lang = 'ru') {
+  const data = document.querySelectorAll('[data-i18]');
+  data.forEach((item) => {
+    let text = item.dataset.i18;
+    item.textContent = i18Obj.ru[text];
+  });
+  mailInput.placeholder = 'Почта';
+  phoneInput.placeholder = 'Телефон';
+}
+function getTranslateEn(lang = 'en') {
+  const data = document.querySelectorAll('[data-i18]');
+  data.forEach((item) => {
+    let text = item.dataset.i18;
+    item.textContent = i18Obj.en[text];
+  });
+  mailInput.placeholder = 'E-mail';
+  phoneInput.placeholder = 'Phone';
+}
+const ruBtn = document.querySelector('.ru');
+const enBtn = document.querySelector('.en');
+ruBtn.addEventListener('click', () => getTranslateRu('ru'));
+enBtn.addEventListener('click', () => getTranslateEn('en'));
 
 const switchers = document.querySelector('.header__language-switcher');
 
@@ -223,3 +240,64 @@ switchers.addEventListener('click', (event) => {
   });
   language.classList.add('active');
 });
+
+// light theme
+
+const toggleThemeBtn = document.body.querySelector('.toggle-theme-btn');
+const toggleThemeImage = document.body.querySelector('#toggle-theme-image');
+const section = document.body.querySelectorAll('.section');
+const footer = document.body.querySelector('.footer-container');
+const hero = document.body.querySelector('.hero-container');
+const title = document.body.querySelectorAll('.section-title');
+
+// toggleThemeBtn.addEventListener('click', () => {
+//   if (document.body.classList.contains('theme')) {
+//     document.body.classList.remove('theme');
+//     toggleThemeImage.src = './assets/svg/sun.svg';
+//   } else {
+//     document.body.classList.add('theme');
+//     toggleThemeImage.src = './assets/svg/moon.svg';
+//   }
+// });
+
+toggleThemeBtn.addEventListener('click', () => {
+  if (document.body.classList.contains('theme')) {
+    document.body.classList.remove('theme');
+  } else {
+    document.body.classList.add('theme');
+  }
+  section.forEach((item) => {
+    if (item.classList.contains('theme')) {
+      item.classList.remove('theme');
+      toggleThemeImage.src = './assets/svg/sun.svg';
+    } else {
+      item.classList.add('theme');
+      toggleThemeImage.src = './assets/svg/moon.svg';
+    }
+  });
+  if (!footer.classList.contains('dark')) {
+    footer.classList.add('dark');
+  }
+  if (!hero.classList.contains('dark')) {
+    hero.classList.add('dark');
+  }
+  btns.forEach((item) => {
+    if (item.classList.contains('theme')) {
+      item.classList.remove('theme');
+    } else {
+      item.classList.add('theme');
+    }
+  });
+  title.forEach((item) => {
+    if (!item.classList.contains('black')) {
+      item.classList.add('black');
+    } else {
+      item.classList.remove('black');
+    }
+  });
+});
+
+let content = window
+  .getComputedStyle(document.querySelector('.section-title'), ':after')
+  .getPropertyValue('content');
+console.log(content);

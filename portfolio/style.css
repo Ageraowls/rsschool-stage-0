@@ -103,6 +103,11 @@ a {
 .language-item.ru {
   cursor: pointer;
 }
+.header__items {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
 
 /* end header block */
 
@@ -481,7 +486,6 @@ h1 {
   justify-content: space-between;
   padding: 53px 20px;
   height: 150px;
-  margin-top: 5px;
 }
 
 .footer__socials {
@@ -558,4 +562,44 @@ h1 {
 .en.active,
 .ru.active {
   color: #bdae82;
+}
+
+.toggle-theme-btn {
+  background-color: transparent;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+#toggle-theme-image {
+  color: #fff;
+}
+
+#toggle-theme-image:hover {
+  transition: 0.3s;
+  filter: invert(21%) sepia(10%) saturate(1031%) hue-rotate(7deg) brightness(89%) contrast(85%);
+}
+
+.theme {
+  background: #fff;
+}
+
+.section.theme {
+  color: #000;
+}
+
+.footer-container.dark {
+  background: #000;
+  color: #fff;
+}
+
+.button-item.theme {
+  color: #000;
+}
+
+.section-title.black {
+  color: black;
+}
+
+.hero-container.dark {
+  color: #fff;
 }

@@ -32,9 +32,10 @@
 				</nav>
 				<div class="header__items">
 					<div class="header__language-switcher">
-						<span class="language-item en active" data-lang="en">en</span><span class="language-item slash">/
-						</span><span class="language-item ru" data-lang="ru">ru</span>
+						<span class="language-item en active" data-lang="en">EN</span><span class="language-item slash">/
+						</span><span class="language-item ru" data-lang="ru">RU</span>
 					</div>
+					<button class="toggle-theme-btn"><img src="./assets/svg/sun.svg" alt="theme" id="toggle-theme-image"></button>
 					<div class="header__burger burger">
 						<span class="burger__line burger__line-first "></span>
 						<span class="burger__line burger__line-second"></span>
@@ -60,7 +61,7 @@
 			</section>
 			<section class="section skills">
 				<div class="title">
-					<h2 class="section-title" id="skills" data-i18="skills">Skills</h2>
+					<h2 class="section-title thtitle" id="skills" data-i18="skills">Skills</h2>
 				</div>
 				<div class="skills-items">
 					<div class="skill-item">
@@ -84,7 +85,7 @@
 			</section>
 			<section class="section portfolio">
 				<div class="title">
-					<h2 class="section-title porftolio-title" id="portfolio" data-i18="portfolio">Portfolio</h2>
+					<h2 class="section-title porftolio-title thtitle" id="portfolio" data-i18="portfolio">Portfolio</h2>
 				</div>
 				<div class="portfolio__buttons-block">
 					<button class="button-item button" data-season="winter" data-i18="winter">Winter</button>
@@ -103,7 +104,7 @@
 			</section>
 			<section class="section video">
 				<div class="title video-title">
-					<h2 class="section-title" id="video" data-i18="video">Video</h2>
+					<h2 class="section-title thtitle" id="video" data-i18="video">Video</h2>
 				</div>
 				<div class="video-player">
 					<picture>
@@ -116,7 +117,7 @@
 			</section>
 			<section class="section price">
 				<div class="title">
-					<h2 class="section-title price-title" id="price" data-i18="price">Price</h2>
+					<h2 class="section-title price-title thtitle" id="price" data-i18="price">Price</h2>
 				</div>
 				<div class="price__cards">
 					<div class="card-item">
@@ -156,10 +157,12 @@
 					<div class="contacts__items">
 						<h2 class="contacts__title" id="contacts" data-i18="contact-me">Contact me</h2>
 						<form action="#" class="contacts__form">
-							<label for="mail"><input type="email" class="contact__form_data" id="mail" placeholder="E-mail"></label>
-							<label for="phone"><input type="tel" class="contact__form_data" id="phone" placeholder="Phone"></label>
+							<label for="mail"><input type="email" class="contact__form_data" id="mail" placeholder="E-mail"
+									data-i18="placeholder-email"></label>
+							<label for="phone"><input type="tel" class="contact__form_data" id="phone" placeholder="Phone"
+									data-i18="placeholder-phone"></label>
 							<label for="message"><textarea name="message" id="message" class="contact__form_message"
-									placeholder="Message"></textarea></label>
+									placeholder="Message" data-i18="placeholder-message"></textarea></label>
 							<button type="submit" class="contact__form_button button" data-i18="send-message">Send message</button>
 						</form>
 					</div>

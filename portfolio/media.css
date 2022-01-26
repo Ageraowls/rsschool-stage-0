@@ -256,6 +256,9 @@
   .burger.active .burger__line:nth-child(3) {
     transform: translateY(-13.5px) rotate(-45deg);
   }
+  .header__items {
+    align-items: center;
+  }
 }
 
 @media (max-width: 719px) {
