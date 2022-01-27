@@ -172,14 +172,10 @@ function mobileMenu() {
   scrollTo();
 })();
 
-//
-
 const portfolioBtn = document.querySelector('.button-item');
 const portfolioImages = document.querySelectorAll('.pictures-item');
 const portfolioBtns = document.querySelector('.portfolio__buttons-block');
 const btns = document.querySelectorAll('.button-item');
-// portfolioImages.forEach((img, index) => (img.src = `./assets/img/winter/${index + 1}.jpg`));
-// event.dataset.forEach((season, index) => (season.src = `./assets/img/${index + 1}`));
 
 portfolioBtns.addEventListener('click', (event) => {
   if (event.target.classList.contains('button-item')) {
@@ -211,6 +207,7 @@ function getTranslateRu(lang = 'ru') {
   data.forEach((item) => {
     let text = item.dataset.i18;
     item.textContent = i18Obj.ru[text];
+    localStorage.lang = 'ru';
   });
   mailInput.placeholder = 'Почта';
   phoneInput.placeholder = 'Телефон';
@@ -220,6 +217,7 @@ function getTranslateEn(lang = 'en') {
   data.forEach((item) => {
     let text = item.dataset.i18;
     item.textContent = i18Obj.en[text];
+    localStorage.lang = 'en';
   });
   mailInput.placeholder = 'E-mail';
   phoneInput.placeholder = 'Phone';
@@ -237,6 +235,7 @@ switchers.addEventListener('click', (event) => {
   const language = event.target;
   langs.forEach((item) => {
     item.classList.remove('active');
+    localStorage.button = 'ru';
   });
   language.classList.add('active');
 });
@@ -249,22 +248,16 @@ const section = document.body.querySelectorAll('.section');
 const footer = document.body.querySelector('.footer-container');
 const hero = document.body.querySelector('.hero-container');
 const title = document.body.querySelectorAll('.section-title');
-
-// toggleThemeBtn.addEventListener('click', () => {
-//   if (document.body.classList.contains('theme')) {
-//     document.body.classList.remove('theme');
-//     toggleThemeImage.src = './assets/svg/sun.svg';
-//   } else {
-//     document.body.classList.add('theme');
-//     toggleThemeImage.src = './assets/svg/moon.svg';
-//   }
-// });
+const menuLinks = document.querySelectorAll('.menu__link');
+const burgerLine = document.querySelectorAll('.burger__line');
 
 toggleThemeBtn.addEventListener('click', () => {
   if (document.body.classList.contains('theme')) {
     document.body.classList.remove('theme');
+    localStorage.theme = 'light';
   } else {
     document.body.classList.add('theme');
+    localStorage.theme = 'dark';
   }
   section.forEach((item) => {
     if (item.classList.contains('theme')) {
@@ -295,9 +288,74 @@ toggleThemeBtn.addEventListener('click', () => {
       item.classList.remove('black');
     }
   });
+  if (document.body.classList.contains('theme') && !navMenu.classList.contains('active')) {
+    navMenu.classList.add('dt');
+  } else {
+    navMenu.classList.remove('dt');
+  }
+  menuLinks.forEach((item) => {
+    if (!navMenu.classList.contains('active') && document.body.classList.contains('theme')) {
+      item.classList.add('darktext');
+    } else {
+      item.classList.remove('darktext');
+    }
+  });
+  if (document.body.classList.contains('theme')) {
+    humb.classList.add('darky');
+  } else {
+    humb.classList.remove('darky');
+  }
 });
 
-let content = window
-  .getComputedStyle(document.querySelector('.section-title'), ':after')
-  .getPropertyValue('content');
-console.log(content);
+// localStorage
+
+if (localStorage.lang === 'ru') {
+  const data = document.querySelectorAll('[data-i18]');
+  data.forEach((item) => {
+    let text = item.dataset.i18;
+    item.textContent = i18Obj.ru[text];
+  });
+  mailInput.placeholder = 'Почта';
+  phoneInput.placeholder = 'Телефон';
+}
+
+if (localStorage.theme === 'dark') {
+  document.body.classList.add('theme');
+  humb.classList.add('darky');
+  toggleThemeImage.src = './assets/svg/moon.svg';
+  menuLinks.forEach((item) => {
+    if (!navMenu.classList.contains('active') && document.body.classList.contains('theme')) {
+      item.classList.add('darktext');
+    }
+  });
+  if (document.body.classList.contains('theme') && !navMenu.classList.contains('active')) {
+    navMenu.classList.add('dt');
+  }
+  title.forEach((item) => {
+    if (!item.classList.contains('black')) {
+      item.classList.add('black');
+    }
+  });
+  btns.forEach((item) => {
+    if (item.classList.contains('theme')) {
+      item.classList.remove('theme');
+    } else {
+      item.classList.add('theme');
+    }
+  });
+  if (!hero.classList.contains('dark')) {
+    hero.classList.add('dark');
+  }
+  if (!footer.classList.contains('dark')) {
+    footer.classList.add('dark');
+  }
+  section.forEach((item) => {
+    if (item.classList.contains('theme')) {
+      item.classList.remove('theme');
+      toggleThemeImage.src = './assets/svg/sun.svg';
+    } else {
+      item.classList.add('theme');
+      toggleThemeImage.src = './assets/svg/moon.svg';
+    }
+  });
+}

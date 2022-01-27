@@ -16,6 +16,7 @@ body {
   font-family: 'Inter', sans-serif;
   font-size: 20px;
   font-weight: 400;
+  transition: 0.5s;
 }
 
 ul {
@@ -585,6 +586,7 @@ h1 {
 
 .section.theme {
   color: #000;
+  transition: 0.5s;
 }
 
 .footer-container.dark {
@@ -597,9 +599,14 @@ h1 {
 }
 
 .section-title.black {
-  color: black;
+  filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
 }
 
 .hero-container.dark {
   color: #fff;
+}
+
+.header__navigation.active.dt {
+  background: #fff;
+  color: #000;
 }

@@ -259,6 +259,12 @@
   .header__items {
     align-items: center;
   }
+  .menu__link.darktext {
+    color: #000;
+  }
+  .header__burger.active.darky {
+    filter: invert(100%) sepia(0%) saturate(4868%) hue-rotate(176deg) brightness(104%) contrast(110%);
+  }
 }
 
 @media (max-width: 719px) {
