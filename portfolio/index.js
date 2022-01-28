@@ -111,14 +111,12 @@ const i18Obj = {
   const menu = document.querySelector('.header__navigation');
   const menuLinks = document.querySelectorAll('.menu__link');
   const overlay = document.querySelector('.overlay');
-  if (window.innerWidth <= 768) {
-    for (let i = 0; i < menuLinks.length; i++) {
-      menuLinks[i].addEventListener('click', () => {
-        menu.classList.remove('active');
-        humb.classList.remove('active');
-        overlay.classList.remove('active');
-      });
-    }
+  for (let i = 0; i < menuLinks.length; i++) {
+    menuLinks[i].addEventListener('click', (event) => {
+      menu.classList.remove('active');
+      humb.classList.remove('active');
+      overlay.classList.remove('active');
+    });
   }
 })();
 
@@ -235,7 +233,6 @@ switchers.addEventListener('click', (event) => {
   const language = event.target;
   langs.forEach((item) => {
     item.classList.remove('active');
-    localStorage.button = 'ru';
   });
   language.classList.add('active');
 });
