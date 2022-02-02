@@ -9,7 +9,7 @@ body {
   margin: 0;
   font-family: 'Baloo Bhaijaan 2', sans-serif;
   color: #fff;
-  background: url(/assets/img/lemonade.png);
+  background: url('./assets/img/lemonade.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -37,7 +37,7 @@ ul {
 .music-card {
   width: 320px;
   height: 420px;
-  background: url(/assets/img/lemonade.png);
+  background: url('./assets/img/lemonade.png');
   background-position: -20px -50px;
   position: absolute;
   border-radius: 20px;
