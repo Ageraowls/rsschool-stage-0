@@ -24,8 +24,8 @@ function loadSong(song) {
   songTitle.innerHTML = song;
   singer.innerHTML = singers[songIndex];
   audio.src = `assets/audio/${song}.mp3`;
-  musicCard.style.background = `url(/assets/img/${covers[songIndex]}.png) top no-repeat`;
-  musicContainer.style.background = `url(/assets/img/${covers[songIndex]}.png) `;
+  musicCard.style.background = `url(./assets/img/${covers[songIndex]}.png) top no-repeat`;
+  musicContainer.style.background = `url(./assets/img/${covers[songIndex]}.png) `;
   musicContainer.style.backgroundSize = `100%`;
   musicContainer.style.backgroundPosition = `center`;
   musicContainer.style.backgroundRepeat = `no-repeat`;
