@@ -15,17 +15,21 @@ console.log(currentTimes);
 
 // Song title
 
-const songs = ["Don't Hurt Yourself", "Don't Start Now"];
-const singers = ['Beyonce', 'Dua Lipa'];
-const covers = ['lemonade', 'dontstartnow'];
-let songIndex = 1;
+const songs = ["Don't Hurt Yourself", "Don't Start Now", 'Highway Love'];
+const singers = ['Beyonce', 'Dua Lipa', 'IVOXYGEN'];
+const covers = ['lemonade', 'dontstartnow', 'higwaylove'];
+let songIndex = 0;
 
 function loadSong(song) {
   songTitle.innerHTML = song;
   singer.innerHTML = singers[songIndex];
   audio.src = `assets/audio/${song}.mp3`;
   musicCard.style.background = `url(/assets/img/${covers[songIndex]}.png) top no-repeat`;
-  // musicContainer.style.background = `url(/assets/img/${covers[songIndex]}.png)`;
+  musicContainer.style.background = `url(/assets/img/${covers[songIndex]}.png) `;
+  musicContainer.style.backgroundSize = `100%`;
+  musicContainer.style.backgroundPosition = `center`;
+  musicContainer.style.backgroundRepeat = `no-repeat`;
+  musicContainer.style.height = `100vh`;
 }
 
 loadSong(songs[songIndex]);
