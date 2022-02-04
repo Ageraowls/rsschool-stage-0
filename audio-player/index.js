@@ -11,7 +11,6 @@ const singer = document.querySelector('.singer-name');
 const songTitle = document.querySelector('.song-title');
 const durationTime = document.querySelector('.durationTime');
 const currentTimes = document.querySelector('.currentTime');
-console.log(currentTimes);
 
 // Song title
 
@@ -25,11 +24,13 @@ function loadSong(song) {
   singer.innerHTML = singers[songIndex];
   audio.src = `assets/audio/${song}.mp3`;
   musicCard.style.background = `url(./assets/img/${covers[songIndex]}.png) top no-repeat`;
+  musicCard.style.transition = `0.3s`;
   musicContainer.style.background = `url(./assets/img/${covers[songIndex]}.png) `;
-  musicContainer.style.backgroundSize = `100%`;
+  musicContainer.style.backgroundSize = `cover`;
   musicContainer.style.backgroundPosition = `center`;
   musicContainer.style.backgroundRepeat = `no-repeat`;
   musicContainer.style.height = `100vh`;
+  musicContainer.style.transition = '0.3s';
 }
 
 loadSong(songs[songIndex]);
@@ -80,6 +81,7 @@ function updateProgress(event) {
   progress.style.width = `${progressPercent}%`;
   let cs = parseInt(audio.currentTime % 60);
   let cm = parseInt((audio.currentTime / 60) % 60);
+  cs = cs > 9 ? cs : `0${cs}`;
   currentTimes.innerHTML = `${cm}:${cs}`;
 }
 
