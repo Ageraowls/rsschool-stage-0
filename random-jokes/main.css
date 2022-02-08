@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(167, 166, 186);
+}
+
+button {
+  font-family: inherit;
+}
+
+.wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Cairo', sans-serif;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+
+.window-information,
+.quote-window {
+  width: 600px;
+  height: 200px;
+  padding-top: 20px;
+  background-color: rgb(240, 248, 255);
+  border-radius: 5px;
+  box-shadow: 5px 5px 1px;
+}
+
+.title {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 25px;
+  width: 550px;
+  margin-top: 10px;
+  color: #fff;
+  border-radius: 5px;
+  background-color: rgb(65, 105, 225);
+  box-shadow: 3px 3px 1px rgb(255, 0, 255);
+}
+
+.text {
+  margin-top: 10px;
+}
+
+.generate-button {
+  margin-top: 10px;
+  width: 150px;
+  height: 50px;
+  font-size: 20px;
+  background-color: rgb(255, 0, 255);
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 3px 3px 1px rgb(65, 105, 225);
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+}
+
+.generate-button:active {
+  box-shadow: 0 0 0 0;
+}
+.quote-window {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+.quote-text {
+  line-height: 30px;
+  font-style: italic;
+}
+
+.quote-author {
+  font-size: 16px;
+  font-weight: 900;
+}
+.quotes-icon {
+  width: 25px;
+  fill: pink;
+  position: absolute;
+  top: 75%;
+  left: 5%;
+}
+
+.quotes-icon-two {
+  width: 25px;
+  fill: pink;
+  position: absolute;
+  top: 40%;
+  right: 5%;
+  transform: rotate(180deg);
+}

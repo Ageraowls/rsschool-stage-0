@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="main.css">
+	<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;900&display=swap" rel="stylesheet">
+	<title>random-quote</title>
+</head>
+
+<body>
+
+	<div class="wrapper">
+		<div class="window-information">
+			<h1 class="title">Random quote</h1>
+			<p class="text">Do you want a random quote?</p>
+			<button class="generate-button">Generate</button>
+		</div>
+		<div class="quote-window">
+			<svg class="quotes-icon">
+				<use xlink:href="sprite.svg#quotes"></use>
+			</svg>
+			<p class="quote-text"></p>
+			<p class="quote-author"></p>
+		</div>
+		<svg class="quotes-icon-two">
+			<use xlink:href="sprite.svg#quotes"></use>
+		</svg>
+	</div>
+	<script src="script.js"></script>
+</body>
+
+</html>
