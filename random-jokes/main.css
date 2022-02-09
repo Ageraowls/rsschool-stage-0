@@ -56,7 +56,7 @@ button {
   margin-top: 10px;
   width: 150px;
   height: 50px;
-  font-size: 20px;
+  font-size: 18px;
   background-color: rgb(255, 0, 255);
   border: none;
   color: #fff;
@@ -101,4 +101,34 @@ button {
   top: 40%;
   right: 5%;
   transform: rotate(180deg);
+}
+
+.lang {
+  position: absolute;
+  left: -40px;
+  z-index: -1;
+}
+
+.lang-item {
+  display: block;
+  width: 50px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  font-weight: 900;
+  color: #fff;
+  background: rgb(255, 0, 255);
+  box-shadow: 3px 3px 1px rgb(65, 105, 225);
+  transition: all 0.5s ease;
+}
+
+.lang-item:active {
+  box-shadow: 0 0 0 0;
+}
+
+.lang_item-active {
+  box-shadow: 0 0 0 0;
+  background-color: #fbb034;
+  background-image: linear-gradient(315deg, #fbb034 0%, #ffdd00 74%);
 }
