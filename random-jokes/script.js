@@ -8,7 +8,7 @@ function url() {
 const text = document.querySelector('.quote-text');
 const author = document.querySelector('.quote-author');
 const btn = document.querySelector('.generate-button');
-const ruBtn = document.querySelector('.ru');
+let elemsForTranslate = [...document.querySelectorAll('[data-i18]')];
 
 async function getData() {
   let res = await fetch(url());
@@ -22,10 +22,9 @@ async function getData() {
 }
 
 btn.addEventListener('click', getData);
-const elemsForTranslate = [...document.querySelectorAll('[data-i18]')];
 window.onload = () => {
   let userLang = localStorage.getItem('userLang');
-  if (userLang === undefined) {
+  if (userLang == undefined) {
     localStorage.setItem('userLang', 'en');
     userLang = 'en';
   }
@@ -34,7 +33,6 @@ window.onload = () => {
     const elemDataSet = item.dataset.i18;
     item.textContent = translateArr[userLang][elemDataSet];
   });
-
   langSubscribe();
   getData();
 };

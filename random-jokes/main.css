@@ -80,6 +80,7 @@ button {
 .quote-text {
   line-height: 30px;
   font-style: italic;
+  transition: all 0.5s;
 }
 
 .quote-author {
@@ -131,4 +132,42 @@ button {
   box-shadow: 0 0 0 0;
   background-color: #fbb034;
   background-image: linear-gradient(315deg, #fbb034 0%, #ffdd00 74%);
+}
+
+.footer {
+  background-color: transparent;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.github-icon {
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+
+.rss-icon {
+  width: 80px;
+  display: block;
+}
+
+.footer__year {
+  font-family: 'Cairo', sans-serif;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.github-icon:hover {
+  fill: rgb(240, 248, 255);
+}
+
+.rss-icon:hover {
+  filter: invert(100%) sepia(72%) saturate(1102%) hue-rotate(177deg) brightness(103%) contrast(101%);
 }
