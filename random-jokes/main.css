@@ -80,7 +80,6 @@ button {
 .quote-text {
   line-height: 30px;
   font-style: italic;
-  transition: all 0.5s;
 }
 
 .quote-author {

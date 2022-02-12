@@ -7,8 +7,6 @@ let btn = document.querySelector('.generate-button');
 
 let events = new Event('click');
 
-// btn.dispatchEvent(event);
-
 export const toggleLanguage = (event) => {
   if (event.target.classList.contains('lang-item')) {
     const lang = event.target.textContent.toLowerCase();
