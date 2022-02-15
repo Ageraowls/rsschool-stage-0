@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(137, 207, 240);
+}
+
+img {
+  display: block;
+}
+
+svg {
+  display: block;
+}
+
+.wrapper {
+  display: flex;
+  gap: 10px;
+  width: 540px;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  perspective: 1000px;
+}
+
+.card {
+  width: 100px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10%;
+  /* background: rgb(255, 244, 79); */
+  background: linear-gradient(90deg, rgba(255, 244, 79, 1) 35%, rgba(255, 165, 0, 1) 100%);
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+/* .card:active {
+  transform: scale(0.97);
+  transition: transform 0.2s;
+} */
+
+.paw {
+  width: 60px;
+  height: 60px;
+  display: block;
+  position: absolute;
+  fill: rgb(192, 64, 0);
+  backface-visibility: hidden;
+}
+
+.front-face {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
