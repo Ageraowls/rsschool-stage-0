@@ -1,4 +1,7 @@
 const cards = [...document.querySelectorAll('.card')];
+const playerTryCount = document.querySelector('.tries');
+const timer = document.querySelector('.timer');
+let playerTry = 0;
 let isFlipCard = false,
   firstCard,
   secondCard,
@@ -10,7 +13,6 @@ window.onload = () => {
     const target = event.currentTarget;
 
     if (boardLocked) return;
-
     target.classList.add('flip');
 
     if (!isFlipCard) {
@@ -21,12 +23,23 @@ window.onload = () => {
       secondCard = target;
       checkAnimals();
     }
+
+    const matchedCard = document.getElementsByClassName('flip');
+
+    if (matchedCard.length === 20) {
+      setTimeout(() => {
+        playerTry = 0;
+        playerTryCount.textContent = playerTry;
+        restart();
+      }, 1000);
+    }
   };
 
   const checkAnimals = () => {
     const isEqual = firstCard.dataset.animal === secondCard.dataset.animal;
 
     isEqual ? disableCards() : unFlipCards();
+    countTries();
   };
 
   function disableCards() {
@@ -42,15 +55,93 @@ window.onload = () => {
       secondCard.classList.remove('flip');
 
       boardLocked = false;
+      resetBoard();
     }, 1000);
   }
 
-  const resetBoard = () => {};
+  const countTries = () => {
+    setTimeout(() => {
+      playerTry++;
+      playerTryCount.textContent = playerTry;
+    }, 500);
+    if (playerTry === 0) {
+      seconds = 0;
+      minutes = 0;
+      hours = 0;
+      startTimer();
+    }
+  };
+
+  const resetTryes = () => {
+    playerTry = 0;
+    playerTryCount.textContent = playerTry;
+  };
+
+  const randomOrder = () => {
+    cards.forEach((item) => {
+      const randomPlace = Math.floor(Math.random() * cards.length);
+      item.style.order = randomPlace;
+    });
+  };
+
+  const resetBoard = () => {
+    isFlipCard = boardLocked = false;
+    firstCard = secondCard = null;
+  };
 
   cards.forEach((item) => {
     item.addEventListener('click', flipCard);
 
-    const randomPlace = Math.floor(Math.random() * cards.length);
-    item.style.order = randomPlace;
+    randomOrder();
   });
+
+  // restart game
+
+  const restart = (event) => {
+    cards.forEach((item, index) => {
+      setTimeout(() => {
+        cards[index].classList.remove('flip');
+      }, 2000);
+    });
+    resetTryes();
+    resetTimer();
+    cards.forEach((item) => {
+      item.addEventListener('click', flipCard);
+    });
+    setTimeout(randomOrder, 2100);
+  };
+
+  // timer
+
+  let seconds = 0,
+    minutes = 0,
+    hours = 0,
+    interval;
+
+  timer.style.fontWeight = '900';
+
+  timer.innerHTML = `${minutes} min ${seconds} sec`;
+  const startTimer = () => {
+    interval = setInterval(() => {
+      timer.innerHTML = `${minutes} min ${seconds} sec`;
+      seconds++;
+      if (seconds === 60) {
+        minutes++;
+        seconds = 0;
+      }
+      if (minutes === 60) {
+        hours++;
+        minutes = 0;
+      }
+    }, 1000);
+  };
+
+  const resetTimer = () => {
+    let seconds = 0;
+    minutes = 0;
+    hours = 0;
+    let timer = document.querySelector('.timer');
+    timer.innerHTML = '0 min 0 sec';
+    clearInterval(interval);
+  };
 };

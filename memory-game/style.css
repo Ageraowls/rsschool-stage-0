@@ -6,13 +6,12 @@
 
 body {
   background: rgb(137, 207, 240);
+  font-family: 'Barlow', sans-serif;
 }
 
-img {
-  display: block;
-}
-
-svg {
+img,
+svg,
+span {
   display: block;
 }
 
@@ -29,6 +28,18 @@ svg {
   perspective: 1000px;
 }
 
+.memory-game {
+  position: absolute;
+  width: 580px;
+  height: 380px;
+  background: rgba(64, 3, 206, 0.1);
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 0px 3px;
+}
+
 .card {
   width: 100px;
   height: 80px;
@@ -43,16 +54,12 @@ svg {
   z-index: 10;
   transform-style: preserve-3d;
   transition: transform 0.5s;
+  box-shadow: 0 0 2px 1px;
 }
 
 .card.flip {
   transform: rotateY(180deg);
 }
-
-/* .card:active {
-  transform: scale(0.97);
-  transition: transform 0.2s;
-} */
 
 .paw {
   width: 60px;
@@ -69,4 +76,53 @@ svg {
   position: absolute;
   transform: rotateY(180deg);
   backface-visibility: hidden;
+}
+
+.player-stats {
+  font-size: 24px;
+  font-weight: 400;
+  position: absolute;
+  bottom: 110%;
+  left: 0;
+  width: 100%;
+  text-align: left;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 10px;
+  background: rgba(64, 3, 206, 0.1);
+  box-shadow: 0 0 2px #000;
+  color: #ffd700;
+  text-shadow: 1px 1px 1px #000;
+}
+
+.player-stats::before,
+.player-stats::after {
+  content: '';
+  position: absolute;
+  width: 45px;
+  height: 20px;
+  background-color: rgba(64, 3, 206, 0.1);
+  box-shadow: 0 0 1px;
+}
+
+.player-stats::after {
+  top: 100%;
+  left: 80%;
+  z-index: -1;
+}
+
+.player-stats::before {
+  top: 100%;
+  right: 80%;
+  z-index: -1;
+}
+
+.moves {
+  display: flex;
+  gap: 10px;
+  font-weight: 900;
+}
+.tries {
+  color: #fff;
 }

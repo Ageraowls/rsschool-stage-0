@@ -6,12 +6,18 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css">
-	<title>Memory-game</title>
+	<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;900&display=swap" rel="stylesheet">
+	<title>memory-game</title>
 </head>
 
 <body>
 	<main>
+		<div class="memory-game"></div>
 		<div class="wrapper">
+			<div class="player-stats">
+				<div class="moves">Moves:<span class="tries">0</span></div>
+				<div class="timer"></div>
+			</div>
 			<div class="card" data-animal="deer">
 				<svg class="paw">
 					<use xlink:href="assets/sprite.svg#paw"></use>
