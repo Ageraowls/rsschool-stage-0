@@ -1,6 +1,7 @@
 const cards = [...document.querySelectorAll('.card')];
 const playerTryCount = document.querySelector('.tries');
 const timer = document.querySelector('.timer');
+const resetBtn = document.querySelector('.reset');
 let playerTry = 0;
 let isFlipCard = false,
   firstCard,
@@ -27,14 +28,14 @@ window.onload = () => {
     const matchedCard = document.getElementsByClassName('flip');
 
     if (matchedCard.length === 20) {
+      createLi();
       setTimeout(() => {
         playerTry = 0;
         playerTryCount.textContent = playerTry;
         restart();
-      }, 1000);
+      }, 2000);
     }
   };
-
   const checkAnimals = () => {
     const isEqual = firstCard.dataset.animal === secondCard.dataset.animal;
 
@@ -101,14 +102,14 @@ window.onload = () => {
     cards.forEach((item, index) => {
       setTimeout(() => {
         cards[index].classList.remove('flip');
-      }, 2000);
+      }, 300);
     });
     resetTryes();
     resetTimer();
     cards.forEach((item) => {
       item.addEventListener('click', flipCard);
     });
-    setTimeout(randomOrder, 2100);
+    setTimeout(randomOrder, 700);
   };
 
   // timer
@@ -143,5 +144,18 @@ window.onload = () => {
     let timer = document.querySelector('.timer');
     timer.innerHTML = '0 min 0 sec';
     clearInterval(interval);
+  };
+
+  resetBtn.addEventListener('click', restart);
+
+  // leader-board
+  const liList = [];
+  const orderList = document.querySelector('.order-list');
+  const liClass = document.querySelectorAll('.board__score');
+  const createLi = () => {
+    const li = document.createElement('li');
+    li.className = 'board__score';
+    orderList.append(li);
+    li.textContent = `moves:${playerTry} time:${minutes}:${seconds}`;
   };
 };
