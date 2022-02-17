@@ -28,12 +28,10 @@ window.onload = () => {
     const matchedCard = document.getElementsByClassName('flip');
 
     if (matchedCard.length === 20) {
-      createLi();
       setTimeout(() => {
-        playerTry = 0;
-        playerTryCount.textContent = playerTry;
+        createLi();
         restart();
-      }, 2000);
+      }, 1000);
     }
   };
   const checkAnimals = () => {
@@ -102,14 +100,14 @@ window.onload = () => {
     cards.forEach((item, index) => {
       setTimeout(() => {
         cards[index].classList.remove('flip');
-      }, 300);
+      }, 500);
     });
     resetTryes();
     resetTimer();
     cards.forEach((item) => {
       item.addEventListener('click', flipCard);
     });
-    setTimeout(randomOrder, 700);
+    setTimeout(randomOrder, 1000);
   };
 
   // timer
@@ -149,13 +147,33 @@ window.onload = () => {
   resetBtn.addEventListener('click', restart);
 
   // leader-board
-  const liList = [];
+
+  let leader = [];
   const orderList = document.querySelector('.order-list');
-  const liClass = document.querySelectorAll('.board__score');
+
   const createLi = () => {
     const li = document.createElement('li');
     li.className = 'board__score';
-    orderList.append(li);
     li.textContent = `moves:${playerTry} time:${minutes}:${seconds}`;
+    let temp = localStorage.getItem('score');
+    leader = JSON.parse(temp) || [];
+    console.log(leader);
+    leader.push({ moves: playerTry, time: `${minutes}:${seconds}` });
+    orderList.append(li);
+    localStorage.setItem('score', JSON.stringify(leader));
   };
+  // localStorage
+  function showResult() {
+    let temp = localStorage.getItem('score');
+    let result = JSON.parse(temp) || [];
+    result.forEach((item, index) => {
+      if (index < 10) {
+        const li = document.createElement('li');
+        li.className = 'board__score';
+        li.textContent = `moves:${item.moves} time:${item.time}`;
+        orderList.append(li);
+      }
+    });
+  }
+  showResult();
 };
