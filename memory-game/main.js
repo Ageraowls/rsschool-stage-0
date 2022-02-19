@@ -30,6 +30,7 @@ window.onload = () => {
     if (matchedCard.length === 20) {
       setTimeout(() => {
         createLi();
+        showModal();
         restart();
       }, 1000);
     }
@@ -147,21 +148,24 @@ window.onload = () => {
   resetBtn.addEventListener('click', restart);
 
   // leader-board
-
   let leader = [];
   const orderList = document.querySelector('.order-list');
-
   const createLi = () => {
     const li = document.createElement('li');
     li.className = 'board__score';
     li.textContent = `moves:${playerTry} time:${minutes}:${seconds}`;
     let temp = localStorage.getItem('score');
     leader = JSON.parse(temp) || [];
-    console.log(leader);
     leader.push({ moves: playerTry, time: `${minutes}:${seconds}` });
     orderList.append(li);
+    sortByMoves(leader);
     localStorage.setItem('score', JSON.stringify(leader));
   };
+
+  function sortByMoves(arr) {
+    arr.sort((a, b) => (a.moves > b.moves ? 1 : -1));
+  }
+
   // localStorage
   function showResult() {
     let temp = localStorage.getItem('score');
@@ -176,4 +180,44 @@ window.onload = () => {
     });
   }
   showResult();
+
+  // modal
+
+  const modalClose = document.querySelector('.modal__close');
+  const modal = document.querySelector('.modal');
+  const modalTitle = document.querySelector('.modal__title');
+  const modalOverlay = document.querySelector('.modal__overlay');
+
+  const closeModal = () => {
+    modal.style.display = 'none';
+    document.location.reload();
+  };
+
+  modal.addEventListener('click', (event) => {
+    if (event.target === modalOverlay) {
+      closeModal();
+    }
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.code === 'Escape') {
+      closeModal();
+    }
+  });
+
+  const showModal = () => {
+    modal.style.display = 'block';
+    createTitle();
+  };
+
+  const createTitle = () => {
+    const title = document.createElement('h3');
+    title.className = 'modal-sub-title';
+    title.textContent = `It took you ${playerTry} moves and time:${minutes}:${seconds}`;
+    modalTitle.after(title);
+  };
+
+  const repeatBtn = document.querySelector('.repeat-button');
+
+  modalClose.addEventListener('click', closeModal);
+  repeatBtn.addEventListener('click', closeModal);
 };
