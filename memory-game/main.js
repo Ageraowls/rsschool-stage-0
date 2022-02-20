@@ -7,6 +7,10 @@ let isFlipCard = false,
   firstCard,
   secondCard,
   boardLocked = false;
+const playBtn = document.querySelector('.play');
+let isPlay = false,
+  music,
+  flip;
 
 window.onload = () => {
   const flipCard = (event) => {
@@ -19,11 +23,16 @@ window.onload = () => {
     if (!isFlipCard) {
       isFlipCard = true;
       firstCard = target;
+      flip.play();
     } else {
       isFlipCard = false;
       secondCard = target;
       checkAnimals();
     }
+
+    setTimeout(() => {
+      flip.play();
+    }, 200);
 
     const matchedCard = document.getElementsByClassName('flip');
 
@@ -223,15 +232,14 @@ window.onload = () => {
 
   // music
 
-  const playBtn = document.querySelector('.play');
-  let isPlay = false,
-    music;
-
   const createMusic = () => {
     music = new Audio();
     music.src = './assets/audio/thememusic.mp3';
     music.loop = true;
     music.volume = 0.3;
+    flip = new Audio();
+    flip.src = './assets/audio/cardflip.mp3';
+    flip.volume = 0.1;
   };
 
   function playMusic() {
@@ -257,10 +265,12 @@ window.onload = () => {
 
   const showModalInformation = () => {
     modalInformation.style.display = 'block';
+    flip.play();
   };
 
   const closeModalInformation = () => {
     modalInformation.style.display = 'none';
+    flip.play();
   };
 
   modalInformation.addEventListener('click', (event) => {
