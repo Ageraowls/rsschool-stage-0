@@ -216,7 +216,8 @@ li {
   line-height: 25px;
 }
 
-.modal {
+.modal,
+.modal-information {
   display: none;
 }
 
@@ -252,7 +253,8 @@ li {
   gap: 20px;
 }
 
-.modal__close {
+.modal__close,
+.modal__close-information {
   font-size: 40px;
   position: absolute;
   right: 2%;
@@ -267,7 +269,8 @@ li {
   margin-top: 10px;
 }
 
-.modal__close:hover {
+.modal__close:hover,
+.modal__close-information:hover {
   transform: scale(1.2);
 }
 
@@ -346,4 +349,53 @@ li {
 
 .rss-icon:hover {
   filter: invert(100%) sepia(72%) saturate(1102%) hue-rotate(177deg) brightness(103%) contrast(101%);
+}
+
+.play-music,
+.information-btn {
+  position: absolute;
+  right: 110%;
+  height: 50px;
+  width: 50px;
+  background-color: rgba(64, 3, 206, 0.1);
+  box-shadow: 0 0 2px #000;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.play,
+.pause,
+.information {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  width: 35px;
+  height: 35px;
+  fill: rgba(255, 244, 79, 1);
+  animation-name: glow-yellow;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+
+@keyframes glow-yellow {
+  0% {
+    fill: rgba(255, 244, 79, 0.7);
+  }
+  100% {
+    fill: rgba(255, 244, 79, 1);
+  }
+}
+
+.information-btn {
+  top: 20%;
+}
+
+.play-music:hover,
+.information-btn:hover {
+  transform: scale(1.2);
 }

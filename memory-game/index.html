@@ -19,6 +19,16 @@
 				<div class="moves">Moves:<span class="tries">0</span></div><button class="reset">RESET</button>
 				<div class="timer"></div>
 			</div>
+			<button class="play-music">
+				<svg class="play">
+					<use xlink:href="assets/sprite.svg#play"></use>
+				</svg>
+			</button>
+			<button class="information-btn">
+				<svg class="information">
+					<use xlink:href="assets/sprite.svg#information"></use>
+				</svg>
+			</button>
 			<div class="card" data-animal="deer">
 				<svg class="paw">
 					<use xlink:href="assets/sprite.svg#paw"></use>
@@ -150,6 +160,16 @@
 					<span class="modal__close">&times;</span>
 					<h2 class="modal__title">Congratulations!</h2>
 					<button class="repeat-button">REPEAT?</button>
+				</div>
+			</div>
+		</div>
+		<div class="modal-information">
+			<div class="modal__overlay">
+				<div class="modal__content">
+					<span class="modal__close-information">&times;</span>
+					<p>The goal of the game is to get all the tiles flipped face up (i.e., find all the matching image pairs) in
+						the least number of tries. That means that lower number of tries are better scores.</p>
+					<p>GOOD LUCK!</p>
 				</div>
 			</div>
 		</div>

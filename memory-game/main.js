@@ -212,7 +212,7 @@ window.onload = () => {
   const createTitle = () => {
     const title = document.createElement('h3');
     title.className = 'modal-sub-title';
-    title.textContent = `It took you ${playerTry} moves and time:${minutes}:${seconds}`;
+    title.textContent = `It took you ${playerTry} moves and time: ${minutes}:${seconds}`;
     modalTitle.after(title);
   };
 
@@ -220,4 +220,55 @@ window.onload = () => {
 
   modalClose.addEventListener('click', closeModal);
   repeatBtn.addEventListener('click', closeModal);
+
+  // music
+
+  const playBtn = document.querySelector('.play');
+  let isPlay = false,
+    music;
+
+  const createMusic = () => {
+    music = new Audio();
+    music.src = './assets/audio/thememusic.mp3';
+    music.loop = true;
+    music.volume = 0.3;
+  };
+
+  function playMusic() {
+    if (isPlay) {
+      music.pause();
+      isPlay = false;
+      playBtn.firstElementChild.href.baseVal = './assets/sprite.svg#play';
+    } else {
+      music.play();
+      isPlay = true;
+      playBtn.firstElementChild.href.baseVal = './assets/sprite.svg#pause';
+    }
+  }
+
+  playBtn.addEventListener('click', playMusic);
+  createMusic();
+
+  // information btn
+
+  const inforamtionBtn = document.querySelector('.information-btn');
+  const modalInformation = document.querySelector('.modal-information');
+  const modalCloseInformation = document.querySelector('.modal__close-information');
+
+  const showModalInformation = () => {
+    modalInformation.style.display = 'block';
+  };
+
+  const closeModalInformation = () => {
+    modalInformation.style.display = 'none';
+  };
+
+  modalInformation.addEventListener('click', (event) => {
+    if (event.target === modalOverlay) {
+      closeModalInformation();
+    }
+  });
+
+  inforamtionBtn.addEventListener('click', showModalInformation);
+  modalCloseInformation.addEventListener('click', closeModalInformation);
 };
