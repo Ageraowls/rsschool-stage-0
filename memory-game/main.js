@@ -126,7 +126,6 @@ window.onload = () => {
     minutes = 0,
     hours = 0,
     interval;
-
   timer.style.fontWeight = '900';
 
   timer.innerHTML = `${minutes} min ${seconds} sec`;
@@ -163,12 +162,12 @@ window.onload = () => {
     const li = document.createElement('li');
     li.className = 'board__score';
     li.textContent = `moves:${playerTry} time:${minutes}:${seconds}`;
-    let temp = localStorage.getItem('score');
+    let temp = localStorage.getItem('score-agera');
     leader = JSON.parse(temp) || [];
     leader.push({ moves: playerTry, time: `${minutes}:${seconds}` });
     orderList.append(li);
     sortByMoves(leader);
-    localStorage.setItem('score', JSON.stringify(leader));
+    localStorage.setItem('score-agera', JSON.stringify(leader));
   };
 
   function sortByMoves(arr) {
@@ -177,7 +176,7 @@ window.onload = () => {
 
   // localStorage
   function showResult() {
-    let temp = localStorage.getItem('score');
+    let temp = localStorage.getItem('score-agera');
     let result = JSON.parse(temp) || [];
     result.forEach((item, index) => {
       if (index < 10) {
