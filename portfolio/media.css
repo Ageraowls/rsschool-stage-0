@@ -55,7 +55,6 @@
   }
   .button-hero {
     margin-top: 59px;
-    padding: 8px 74px 8px 72px;
   }
 
   .skills-items {
@@ -255,6 +254,15 @@
   }
   .burger.active .burger__line:nth-child(3) {
     transform: translateY(-13.5px) rotate(-45deg);
+  }
+  .header__items {
+    align-items: center;
+  }
+  .menu__link.darktext {
+    color: #000;
+  }
+  .header__burger.active.darky {
+    filter: invert(100%) sepia(0%) saturate(4868%) hue-rotate(176deg) brightness(104%) contrast(110%);
   }
 }
 

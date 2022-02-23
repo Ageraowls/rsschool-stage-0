@@ -16,6 +16,7 @@ body {
   font-family: 'Inter', sans-serif;
   font-size: 20px;
   font-weight: 400;
+  transition: 0.5s;
 }
 
 ul {
@@ -97,12 +98,16 @@ a {
 
 .language-item.en {
   font-weight: 700;
-  color: #bdae82;
   cursor: pointer;
 }
 
 .language-item.ru {
   cursor: pointer;
+}
+.header__items {
+  display: flex;
+  align-items: center;
+  gap: 35px;
 }
 
 /* end header block */
@@ -143,7 +148,6 @@ h1 {
   width: 220px;
   height: 55px;
   font-size: 20px;
-  padding: 8px 70px 8px 72px;
   border-radius: 0px;
   margin-top: 25px;
   line-height: 40px;
@@ -283,7 +287,7 @@ h1 {
   cursor: pointer;
 }
 
-.button-item:last-child {
+.button__gold.active {
   background: #bdae82;
   color: #000;
 }
@@ -482,7 +486,6 @@ h1 {
   justify-content: space-between;
   padding: 53px 20px;
   height: 150px;
-  margin-top: 5px;
 }
 
 .footer__socials {
@@ -550,4 +553,95 @@ h1 {
   bottom: 0;
 }
 
-/* End footer */ ;
+/* End footer */
+.button-item.active {
+  color: #000;
+  background-color: #bdae82;
+}
+
+.en.active,
+.ru.active {
+  color: #bdae82;
+}
+
+.toggle-theme-btn {
+  background-color: transparent;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+#toggle-theme-image {
+  color: #fff;
+}
+
+#toggle-theme-image:hover {
+  transition: 0.3s;
+  filter: invert(21%) sepia(10%) saturate(1031%) hue-rotate(7deg) brightness(89%) contrast(85%);
+}
+
+.theme {
+  background: #fff;
+}
+
+.section.theme {
+  color: #000;
+  transition: 0.5s;
+}
+
+.footer-container.dark {
+  background: #000;
+  color: #fff;
+}
+
+.button-item.theme {
+  color: #000;
+}
+
+.section-title.black {
+  filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+}
+
+.hero-container.dark {
+  color: #fff;
+}
+
+.header__navigation.active.dt {
+  background: #fff;
+  color: #000;
+}
+
+.button {
+  position: relative;
+  box-shadow: 0 2px 10px #bdae82;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.button:focus {
+  outline: none;
+  transition: 0.5s;
+}
+
+.button .circle {
+  position: absolute;
+  background-color: #fff;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: scale 0.5s ease-out;
+}
+
+@keyframes scale {
+  to {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
+}
+
+.button:active {
+  transform: scale(0.9);
+  background-color: #b8ae8e;
+  box-shadow: 0 5px 15px #0a0a08;
+  transition: 0.5s;
+}
