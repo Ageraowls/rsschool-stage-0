@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="main.css">
+	<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;900&display=swap" rel="stylesheet">
+	<link rel="icon" href="assets/svg/double-quotes.svg">
+	<title>random-quote</title>
+</head>
+
+<body>
+
+	<div class="wrapper">
+		<div class="window-information">
+			<div class="lang">
+				<button class="lang-item en lang_item-active">EN</button>
+				<button class="lang-item ru">RU</button>
+			</div>
+			<h1 class="title" data-i18="title"></h1>
+			<p class="text" data-i18="text"></p>
+			<button class="generate-button" data-i18="generate"></button>
+		</div>
+		<div class="quote-window">
+			<svg class="quotes-icon">
+				<use xlink:href="sprite.svg#quotes"></use>
+			</svg>
+			<p class="quote-text"></p>
+			<p class="quote-author"></p>
+		</div>
+		<svg class="quotes-icon-two">
+			<use xlink:href="sprite.svg#quotes"></use>
+		</svg>
+	</div>
+	<footer class="footer">
+		<a href="https://github.com/Ageraowls" target="_blank" class="footer__link"><svg class="github-icon">
+				<use xlink:href="sprite.svg#github"></use>
+			</svg></a>
+		<p class="footer__year">2022</p>
+		<a href="https://rs.school/js-stage0/" target="_blank" class="footer__link"><img class="rss-icon"
+				src="assets/svg/rss-icon.svg" alt="svg-link"></a>
+	</footer>
+	<script type="module" src="script.js"></script>
+</body>
+
+</html>
