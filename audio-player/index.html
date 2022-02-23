@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="main.css">
+	<link rel="icon" href="assets/svg/favicon.svg">
+	<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&display=swap" rel="stylesheet">
+	<title>audio-player</title>
+</head>
+
+<body>
+	<div class="music-container">
+		<h1 class="main-title">Audio player</h1>
+		<div class="music-card">
+			<div class="music-card__info">
+				<button class="play-button button"><img src="./assets/svg/play.svg" alt="play-button"
+						class="img-button play"></button>
+				<div class="singer">
+					<span class="singer-name">Beyonce</span>
+					<span class="song-title">Don't Hurt Yourself</span>
+				</div>
+				<div class="switcher-buttons">
+					<button class="backward-button button"><img src="./assets/svg/forward.svg" alt="backward-button"
+							class="img-button backward"></button>
+					<button class="forward-button button"><img src="./assets/svg/forward.svg" alt="forward-button"
+							class="img-button forward"></button>
+				</div>
+				<div class="currentTime">0:00</div>
+				<div class="progress-container">
+					<div class="progress"></div>
+				</div>
+				<div class="durationTime">0:00</div>
+			</div>
+			<div>
+				<audio src="/assets/audio/Don't Hurt Yourself.mp3" id="audio"></audio>
+			</div>
+		</div>
+		<footer class="footer" id="footer">
+			<div class="footer__content">
+				<ul class="footer__content-list">
+					<li><a href="https://github.com/Ageraowls" class="footer__link" target="_blank"><img
+								src="assets/svg/github.svg" alt="ageraowls-github" class="github-link"></a></li>
+					<li class="footer__year">2022</li>
+					<li><a href="https://rs.school/js-stage0/" class="footer__link" target="_blank"><img
+								src="assets/svg/rs_school_logo.svg" alt="rs_school_link" class="rschool-link"></a></li>
+				</ul>
+			</div>
+		</footer>
+	</div>
+	<script src="index.js"></script>
+</body>
+
+</html>
