@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" href="assets/svg/vectorpaint.svg">
+	<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;900&display=swap" rel="stylesheet">
+	<title>memory-game</title>
+</head>
+
+<body>
+	<main>
+		<div class="memory-game"></div>
+		<div class="wrapper">
+			<div class="player-stats">
+				<div class="moves">Moves:<span class="tries">0</span></div><button class="reset">RESET</button>
+				<div class="timer"></div>
+			</div>
+			<button class="play-music">
+				<svg class="play">
+					<use xlink:href="assets/sprite.svg#play"></use>
+				</svg>
+			</button>
+			<button class="information-btn">
+				<svg class="information">
+					<use xlink:href="assets/sprite.svg#information"></use>
+				</svg>
+			</button>
+			<div class="card" data-animal="deer">
+				<svg class="paw">
+					<use xlink:href="assets/sprite.svg#paw"></use>
+				</svg>
+				<img src="assets/img/deer.png" alt="deer" class="front-face">
+			</div>
+			<div class="card" data-animal="deer">
+				<svg class="paw">
+					<use xlink:href="assets/sprite.svg#paw"></use>
+				</svg>
+				<img src="assets/img/deer.png" alt="deer" class="front-face">
+			</div>
+			<div class="card" data-animal="dolphin">
+				<svg class="paw">
+					<use xlink:href="assets/sprite.svg#paw"></use>
+				</svg>
+				<img src="assets/img/dolphin.png" alt="dolphin" class="front-face">
+			</div>
+			<div class="card" data-animal="dolphin">
+				<svg class="paw">
+					<use xlink:href="assets/sprite.svg#paw"></use>
+				</svg>
+				<img src="assets/img/dolphin.png" alt="dolphin" class="front-face">
+			</div>
+			<div class="card" data-animal="flamingo">
+				<svg class="paw">
+					<use xlink:href="assets/sprite.svg#paw"></use>
+				</svg>
+				<img src="assets/img/flamingo.png" alt="flamingo" class="front-face">
+			</div>
+			<div class="card" data-animal="flamingo">
+				<svg class="paw">
+					<use xlink:href="assets/sprite.svg#paw"></use>
+				</svg>
+				<img src="assets/img/flamingo.png" alt="flamingo" class="front-face">
+			</div>
+			<div class="card" data-animal="giraffe">
+				<svg class="paw">
+					<use xlink:href="assets/sprite.svg#paw"></use>
+				</svg>
+				<img src="assets/img/giraffe.png" alt="giraffe" class="front-face">
+			</div>
+			<div class="card" data-animal="giraffe">
+				<svg class="paw">
+					<use xlink:href="assets/sprite.svg#paw"></use>
+				</svg>
+				<img src="assets/img/giraffe.png" alt="giraffe" class="front-face">
+			</div>
+			<div class="card" data-animal="hedgehog">
+				<svg class="paw">
+					<use xlink:href="assets/sprite.svg#paw"></use>
+				</svg>
+				<img src="assets/img/hedgehog.png" alt="hedgehog" class="front-face">
+			</div>
+			<div class="card" data-animal="hedgehog">
+				<svg class="paw">
+					<use xlink:href="assets/sprite.svg#paw"></use>
+				</svg>
+				<img src="assets/img/hedgehog.png" alt="hedgehog" class="front-face">
+			</div>
+			<div class="card" data-animal="koala">
+				<svg class="paw">
+					<use xlink:href="assets/sprite.svg#paw"></use>
+				</svg>
+				<img src="assets/img/koala.png" alt="koala" class="front-face">
+			</div>
+			<div class="card" data-animal="koala">
+				<svg class="paw">
+					<use xlink:href="assets/sprite.svg#paw"></use>
+				</svg>
+				<img src="assets/img/koala.png" alt="koala" class="front-face">
+			</div>
+			<div class="card" data-animal="monkey">
+				<svg class="paw">
+					<use xlink:href="assets/sprite.svg#paw"></use>
+				</svg>
+				<img src="assets/img/monkey.png" alt="monkey" class="front-face">
+			</div>
+			<div class="card" data-animal="monkey">
+				<svg class="paw">
+					<use xlink:href="assets/sprite.svg#paw"></use>
+				</svg>
+				<img src="assets/img/monkey.png" alt="monkey" class="front-face">
+			</div>
+			<div class="card" data-animal="owl">
+				<svg class="paw">
+					<use xlink:href="assets/sprite.svg#paw"></use>
+				</svg>
+				<img src="assets/img/owl.png" alt="owl" class="front-face">
+			</div>
+			<div class="card" data-animal="owl">
+				<svg class="paw">
+					<use xlink:href="assets/sprite.svg#paw"></use>
+				</svg>
+				<img src="assets/img/owl.png" alt="owl" class="front-face">
+			</div>
+			<div class="card" data-animal="snail">
+				<svg class="paw">
+					<use xlink:href="assets/sprite.svg#paw"></use>
+				</svg>
+				<img src="assets/img/snail.png" alt="snail" class="front-face">
+			</div>
+			<div class="card" data-animal="snail">
+				<svg class="paw">
+					<use xlink:href="assets/sprite.svg#paw"></use>
+				</svg>
+				<img src="assets/img/snail.png" alt="snail" class="front-face">
+			</div>
+			<div class="card" data-animal="whale">
+				<svg class="paw">
+					<use xlink:href="assets/sprite.svg#paw"></use>
+				</svg>
+				<img src="assets/img/whale.png" alt="whale" class="front-face">
+			</div>
+			<div class="card" data-animal="whale">
+				<svg class="paw">
+					<use xlink:href="assets/sprite.svg#paw"></use>
+				</svg>
+				<img src="assets/img/whale.png" alt="whale" class="front-face">
+			</div>
+			<div class="leader-board">
+				<h1 class="leader-board__title">LEADERBOARD</h1>
+				<ol class="order-list"></ol>
+			</div>
+		</div>
+		<div class="modal">
+			<div class="modal__overlay">
+				<div class="modal__content">
+					<span class="modal__close">&times;</span>
+					<h2 class="modal__title">Congratulations!</h2>
+					<button class="repeat-button">REPEAT?</button>
+				</div>
+			</div>
+		</div>
+		<div class="modal-information">
+			<div class="modal__overlay">
+				<div class="modal__content">
+					<span class="modal__close-information">&times;</span>
+					<p>The goal of the game is to get all the tiles flipped face up (i.e., find all the matching image pairs) in
+						the least number of tries. That means that lower number of tries are better scores.</p>
+					<p>GOOD LUCK!</p>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer class="footer">
+		<a href="https://github.com/Ageraowls" target="_blank" class="footer__link"><svg class="github-icon">
+				<use xlink:href="assets/sprite.svg#github"></use>
+			</svg></a>
+		<p class="footer__year">2022</p>
+		<a href="https://rs.school/js-stage0/" target="_blank" class="footer__link"><img class="rss-icon"
+				src="assets/svg/rss-icon.svg" alt="svg-link"></a>
+	</footer>
+	<script src="main.js"></script>
+</body>
+
+</html>
